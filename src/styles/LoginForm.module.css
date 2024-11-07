@@ -1,0 +1,127 @@
+/* Overall Login Form Styling */
+.formContainer {
+    padding: 20px;
+    width: 300px;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    backdrop-filter: blur(10px); /* Subtle blur effect */
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+}
+.heading{
+    font-size: 15px;
+    color: #767676;
+}
+
+/* Form Layout */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Input Field Styling */
+.input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    border-color: #0070f3;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(0, 112, 243, 0.3);
+}
+
+/* Primary Button Styling */
+.button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 4px 10px rgba(0, 112, 243, 0.3);
+}
+
+/* Google Login Button Styling */
+.googleButton {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.googleButton:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Redirect Text and Link Styling */
+.redirectText {
+    font-size: 14px;
+    color: #666;
+    margin-top: 15px;
+}
+
+.redirectLink {
+    color: #0070f3;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.redirectLink:hover {
+    color: #005bb5;
+}
+
+.error {
+    font-size: 12px;
+    color: #ff4d4f;
+    margin-top: -10px; /* Adjust to bring it closer to input */
+    text-align: left;
+    padding-left: 5px;
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .formContainer {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .input {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .button,
+    .googleButton {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .redirectText {
+        font-size: 13px;
+    }
+}

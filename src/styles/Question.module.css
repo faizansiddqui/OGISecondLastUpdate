@@ -1,0 +1,141 @@
+.questionContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.questionItem {
+    margin: 15px 0;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #2c3e50;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.question:hover {
+    background-color: #e8e8e8;
+}
+
+.answer {
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.likeButton {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.likeButton:hover {
+    background-color: #0056b3;
+}
+
+.commentSection {
+    margin-top: 10px;
+}
+
+.commentSection input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment {
+    margin-top: 5px;
+    padding: 8px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.readMoreButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.readMoreButton:hover {
+    background-color: #0056b3;
+}
+
+.questionContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.questionItem {
+    margin: 10px 0;
+}
+
+.questionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
+}
+
+.likeButton {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.question:hover {
+    background-color: #e8e8e8;
+}
+
+.answer {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.commentSection {
+    margin-top: 10px;
+}
+
+.comment {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}

@@ -1,0 +1,95 @@
+/* General Hero container styling */
+.hero {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    width: 99%;
+    margin-bottom: 30px;
+}
+
+.slideItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 500px;
+    cursor: pointer;
+    position: relative;
+}
+
+.arrowButton {
+    width: 60px;
+    height: 60px;
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #fff;
+}
+
+.heroTop {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Slideshow container */
+.slideContainer {
+    width: 100%;
+}
+
+.slideItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Form overlay styling */
+.formOverlay {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Adjust slide item height based on screen size */
+@media (max-width: 1024px) {
+    .slideItem {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slideItem {
+        height: 300px;
+    }
+
+    .formOverlay {
+        padding: 15px;
+        width: 90%;
+    }
+}
+
+/* Mobile styling */
+@media (max-width: 480px) {
+    .slideItem {
+        height: 250px;
+    }
+
+    .formOverlay {
+        padding: 10px;
+        width: 95%;
+    }
+}
