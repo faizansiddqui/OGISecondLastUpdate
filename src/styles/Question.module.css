@@ -1,141 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Main Container for FAQ Section */
+.mainContainer h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 70px;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #1d3557;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif; /* Applying Roboto font */
+}
+
+/* Container for all questions */
 .questionContainer {
-    max-width: 800px;
+    max-width: 90%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* Responsive Grid for larger screens */
+@media (min-width: 1024px) {
+    .questionContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Individual Question Item Styling */
 .questionItem {
-    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    overflow: hidden;
+    max-width: 100%;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 15px;
 }
 
+.questionItem:hover {
+    background-color: #f1f9ff;
+    transform: translateY(-2px);
+}
+
+/* Question Text Styling */
 .question {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #2c3e50;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s;
+    font-size: 1.2em;
+    font-weight: 500; /* Medium weight */
+    color: #1d3557;
+    font-family: 'Roboto', sans-serif;
 }
 
-.question:hover {
-    background-color: #e8e8e8;
-}
-
+/* Answer Styling */
 .answer {
-    padding: 15px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-.likeButton {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.likeButton:hover {
-    background-color: #0056b3;
-}
-
-.commentSection {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background-color: #f8f9fa;
+    padding: 0 15px;
+    color: #495057;
+    font-size: 1.05em;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif; /* Applying Roboto for answer text */
+    border-left: 3px solid #457b9d;
     margin-top: 10px;
 }
 
-.commentSection input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+/* Expanded Answer */
+.questionItem.expanded .answer {
+    max-height: 300px;
+    padding: 15px 15px;
 }
 
-.comment {
-    margin-top: 5px;
-    padding: 8px;
-    background-color: #f1f1f1;
-    border-radius: 5px;
-}
-
+/* "Read More" Button */
 .readMoreButton {
-    display: block;
+    display: inline-block;
     margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #007bff;
+    padding: 12px 25px;
+    background-color: #457b9d;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .readMoreButton:hover {
-    background-color: #0056b3;
+    background-color: #1d3557;
 }
 
-.questionContainer {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+/* Responsive adjustments for tablet screens */
+@media (max-width: 769px) {
+    .mainContainer h2 {
+        font-size: 1.8em;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+    
+    .questionContainer {
+        padding: 20px;
+        max-width: 95%;
+        gap: 15px;
+    }
+    
+    .questionItem {
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .question {
+        font-size: 1.1em;
+        padding: 6px 0;
+    }
+    
+    .answer {
+        padding: 0 10px;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+    
+    .readMoreButton {
+        font-size: 0.95em;
+        padding: 10px 20px;
+    }
 }
 
-.questionItem {
-    margin: 10px 0;
-}
-
-.questionHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    font-weight: bold;
-    color: #2c3e50;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s;
-}
-
-.likeButton {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #007bff;
-}
-
-.question:hover {
-    background-color: #e8e8e8;
-}
-
-.answer {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-
-.commentSection {
-    margin-top: 10px;
-}
-
-.comment {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
+/* Responsive adjustments for mobile screens */
+@media (max-width: 480px) {
+    .mainContainer h2 {
+        font-size: 1.6em;
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
+    
+    .questionContainer {
+        padding: 15px;
+        max-width: 98%;
+        gap: 10px;
+    }
+    
+    .questionItem {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+    
+    .question {
+        font-size: 1em;
+        padding: 5px 0;
+    }
+    
+    .answer {
+        padding: 0 8px;
+        font-size: 0.95em;
+        line-height: 1.4;
+    }
+    
+    .readMoreButton {
+        font-size: 0.9em;
+        padding: 8px 18px;
+    }
 }

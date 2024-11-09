@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
@@ -6,7 +8,7 @@ import css from '../styles/Hero.module.css';
 import SignupForm from '../components/SignUp.jsx';
 import AnotherForm from '../components/Login.jsx';
 import { useEffect, useState } from 'react';
-
+import '../styles/globals.css';
 
 const Hero = () => {
 

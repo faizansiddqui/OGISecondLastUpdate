@@ -1,60 +1,78 @@
-/* PopulerCourses.module.css */
-
 .container {
-    text-align: center;
-    padding: 40px;
-  }
-  
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-    color: #777;
-    margin-bottom: 20px;
-  }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .card {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-  }
-  
-  .courseName {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
-  }
-  
-  .description {
-    font-size: 0.9rem;
-    color: #666;
-  }
-  .icon {
-    font-size: 2.5rem;
-    color: #4A90E2;
-    margin-bottom: 15px;
-  }
-  
-  
+  text-align: center;
+  padding: 40px;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.viewAllButton {
+  font-size: 1rem;
+  background-color: #4A90E2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.viewAllButton:hover {
+  background-color: #357ABD;
+  transform: translateY(-2px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding-right: 15px; /* Space for scrollbar */
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 3rem;
+  color: #4A90E2;
+  margin-bottom: 15px;
+}
+
+.courseName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.category {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 10px;
+}

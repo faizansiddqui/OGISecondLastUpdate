@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Section Styling */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  color: #f7f7ff;
+}
+
+.headingContainer {
+  margin-bottom: 40px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.subHeading {
+  font-size: 1.1rem;
+  color: #6d6d6d;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  width: 90%;
+  margin: auto;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1c1b29 0%, #3a3b55 100%);
+
+  background-blend-mode: overlay;
+}
+
+/* Styling each stat box */
+.statBox {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  min-width: 160px;
+  max-width: 200px;
+  flex: 1 1 160px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid #e1e7f0;
+}
+
+.statBox:hover {
+  transform: translateY(-5px);
+}
+
+.statBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Heading & paragraph styling within each stat box */
+.statBox h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.statBox p {
+  font-size: 1rem;
+  color: #7a8c99;
+}
+
+/* Unique color accents for each stat */
+.totalCourses::before { background: linear-gradient(135deg, #34c759 0%, #00b894 100%); }
+.totalInstrutor::before { background: linear-gradient(135deg, #ff9500 0%, #ffab40 100%); }
+.totalStudents::before { background: linear-gradient(135deg, #007aff 0%, #5ac8fa 100%); }
+.totalSeat::before { background: linear-gradient(135deg, #ff3b30 0%, #ff5e57 100%); }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .container {
+    padding: 30px 10px;
+    gap: 20px;
+  }
+
+  .statBox h2 {
+    font-size: 1.5rem;
+  }
+
+  .statBox p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statBox {
+    padding: 15px 10px;
+    min-width: 140px;
+  }
+
+  .statBox h2 {
+    font-size: 1.3rem;
+  }
+
+  .statBox p {
+    font-size: 0.85rem;
+  }
+}

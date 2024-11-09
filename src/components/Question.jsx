@@ -1,4 +1,4 @@
-// Question.js
+"use client"
 
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,10 +9,9 @@ import styles from "../styles/Question.module.css";
 const Question = () => {
     const dispatch = useDispatch();
     const [showMore, setShowMore] = useState(false);
-    const [expandedIndex, setExpandedIndex] = useState(null);
+    const [expandedIndices, setExpandedIndices] = useState(new Set()); // Manage multiple expanded states
 
-    // Fetch blog posts from the Redux store
-    const { blogs, loading } = useSelector((state) => state.blogs);
+    const { blogs = [], loading = false } = useSelector((state) => state.blogs || {});
 
     useEffect(() => {
         if (showMore && blogs.length === 0) {
@@ -20,65 +19,91 @@ const Question = () => {
         }
     }, [showMore, dispatch, blogs.length]);
 
-    // Sample static questions and answers
     const staticQuestions = [
-        { question: "What is BCA in salary?", answer: "The average salary after BCA can vary by industry." },
-        { question: "What is BCA used for?", answer: "BCA is used to gain skills in programming, software development, etc." },
-        { question: "What is a BCA job?", answer: "BCA graduates can work in web design, banking, network engineering, etc." },
-        { question: "Can I get a 1 lakh salary after BCA?", answer: "Yes, depending on skills and job roles, it's achievable." },
-        { question: "Is BCA good for career growth?", answer: "BCA offers growth opportunities in the tech sector." },
-        { question: "How long does it take to complete BCA?", answer: "A BCA degree typically takes three years to complete." }
+        { 
+            question: "What career opportunities are available after completing BCA?", 
+            answer: "After BCA, you can pursue roles such as software developer, web designer, system analyst, or network engineer. Many graduates work in IT firms, banks, and software companies." 
+        },
+        { 
+            question: "Is MCA necessary after BCA?", 
+            answer: "MCA is not necessary but can help advance your career, especially if you're interested in software development, data science, or IT management. MCA provides deeper knowledge and specialization in computer applications." 
+        },
+        { 
+            question: "What is the difference between O-Level and CCC courses?", 
+            answer: "O-Level is an advanced course offering foundational knowledge in IT, including programming and networking, while CCC is an entry-level course focusing on basic computer skills like internet usage, email, and office applications." 
+        },
+        { 
+            question: "What salary can I expect after BCA or MCA?", 
+            answer: "After BCA, the average salary ranges from 2 to 4 LPA, depending on your skills and location. MCA graduates generally earn higher, with starting salaries around 3 to 6 LPA, increasing with experience." 
+        },
+        { 
+            question: "Are internships important during BCA and MCA?", 
+            answer: "Yes, internships are highly beneficial as they provide practical experience, help build a professional network, and make you more competitive in the job market. Many companies prefer hiring candidates with internship experience." 
+        },
+        { 
+            question: "What programming languages are essential to learn in BCA or MCA?", 
+            answer: "BCA covers basic programming languages like C, C++, and Java. In MCA, you’ll also learn advanced languages and frameworks, including Python, .NET, and data structures. Learning these languages helps build a strong foundation for IT careers." 
+        }
+        // Add more static questions here
     ];
 
     const toggleQuestion = (index) => {
-        setExpandedIndex(index === expandedIndex ? null : index);
+        const newExpandedIndices = new Set(expandedIndices);
+        if (newExpandedIndices.has(index)) {
+            newExpandedIndices.delete(index);
+        } else {
+            newExpandedIndices.add(index);
+        }
+        setExpandedIndices(newExpandedIndices);
     };
 
     return (
-        <div className={styles.questionContainer}>
+        <div className={styles.mainContainer}>
             <h2>Frequently Asked Questions</h2>
-
-            {staticQuestions.map((item, index) => (
-                <div key={index} className={styles.questionItem}>
-                    <div className={styles.question} onClick={() => toggleQuestion(index)}>
-                        {item.question}
-                        {expandedIndex === index ? <FaChevronUp /> : <FaChevronDown />}
-                    </div>
-                    {expandedIndex === index && (
-                        <div className={styles.answer}>
-                            <p>{item.answer}</p>
+            <div className={styles.questionContainer}>
+                {staticQuestions.map((item, index) => (
+                    <div
+                        key={index}
+                        className={`${styles.questionItem} ${expandedIndices.has(index) ? styles.expanded : ""}`}
+                        onClick={() => toggleQuestion(index)}
+                    >
+                        <div className={styles.question}>
+                            {item.question}
+                            {expandedIndices.has(index) ? <FaChevronUp /> : <FaChevronDown />}
                         </div>
-                    )}
-                </div>
-            ))}
+                        <div className={styles.answer}>
+                            {expandedIndices.has(index) && <p>{item.answer}</p>}
+                        </div>
+                    </div>
+                ))}
 
-            {!showMore && (
-                <button className={styles.readMoreButton} onClick={() => setShowMore(true)}>
-                    Read More
-                </button>
-            )}
+                {!showMore && (
+                    <button className={styles.readMoreButton} onClick={() => setShowMore(true)}>
+                        Read More
+                    </button>
+                )}
 
-            {showMore && (
-                <>
-                    {loading && <p>Loading more questions...</p>}
-                    {blogs.map((blog, index) => (
-                        <div key={blog.id} className={styles.questionItem}>
+                {showMore && (
+                    <>
+                        {loading && <p>Loading more questions...</p>}
+                        {blogs.map((blog, index) => (
                             <div
-                                className={styles.question}
+                                key={blog.id}
+                                className={`${styles.questionItem} ${expandedIndices.has(index + staticQuestions.length) ? styles.expanded : ""}`}
                                 onClick={() => toggleQuestion(index + staticQuestions.length)}
                             >
-                                {blog.question}
-                                {expandedIndex === index + staticQuestions.length ? <FaChevronUp /> : <FaChevronDown />}
-                            </div>
-                            {expandedIndex === index + staticQuestions.length && (
-                                <div className={styles.answer}>
-                                    <p>{blog.answer}</p>
+                                <div className={styles.question}>
+                                    {blog.question}
+                                    {expandedIndices.has(index + staticQuestions.length) ? <FaChevronUp /> : <FaChevronDown />}
                                 </div>
-                            )}
-                        </div>
-                    ))}
-                </>
-            )}
+                                <div className={styles.answer}>
+                                    {expandedIndices.has(index + staticQuestions.length) && <p>{blog.answer}</p>}
+                                </div>
+                            </div>
+                        ))}
+                    </>
+                )}
+            </div>
         </div>
     );
 };

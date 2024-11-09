@@ -1,46 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+
+
+/* Main Container */
 .container {
+  font-family: 'Roboto', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  gap: 40px;
+  padding: 60px;
+  gap: 50px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.left, .right {
+/* Left and Right Columns */
+.left,
+.right {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
 }
 
+/* Video Thumbnail */
 .videoThumbnail {
   position: relative;
   cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.videoThumbnail:hover {
+  transform: scale(1.02);
 }
 
 .thumbnailImage {
   width: 100%;
   height: auto;
+  height: 280px;
   border-radius: 8px;
 }
 
+/* Play Button Styling */
 .playButton {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 50%;
-  font-size: 2em;
-  padding: 10px;
+  font-size: 2rem;
+  padding: 20px;
   cursor: pointer;
+  color: #007bff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.playButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Video Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -51,11 +80,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 .videoContainer {
   position: relative;
-  width: 80%;
+  width: 90%;
   max-width: 800px;
 }
 
@@ -65,44 +95,58 @@
   border-radius: 8px;
 }
 
+/* Close Button */
 .closeButton {
   position: absolute;
   top: 10px;
   right: 10px;
   width: 50px;
   height: 50px;
-  background-color: #0000008f;
+  background-color: #333;
   color: #fff;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
-  padding: 5px 10px;
   border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
+.closeButton:hover {
+  background-color: #555;
+}
+
+/* Heading and Text Styling */
 .heading {
   font-size: 2.5rem;
   color: #333;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .navyBlue {
-  color: #001f3f;
+  color: #007bff;
 }
 
-.para {
+.para,
+.secondPara {
   font-size: 1.2rem;
   color: #666;
   margin-top: 10px;
+  line-height: 1.6;
 }
 
+/* Explore Button */
 .exploreButton {
-  padding: 12px 24px;
+  padding: 12px 28px;
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
   transition: background-color 0.3s ease;
 }
 
@@ -110,6 +154,62 @@
   background-color: #0056b3;
 }
 
-.navyBlue{
-  color: #007bff;
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .para,
+  .secondPara {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .left,
+  .right {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .para,
+  .secondPara {
+    font-size: 1rem;
+  }
+
+  .exploreButton {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .para,
+  .secondPara {
+    font-size: 0.95rem;
+  }
+
+  .exploreButton {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
 }

@@ -1,5 +1,8 @@
+"use client"
+
 import React, { useState } from 'react';
 import styles from '../styles/Main.module.css';
+
 
 const Main = () => {
   const [showVideo, setShowVideo] = useState(false);
