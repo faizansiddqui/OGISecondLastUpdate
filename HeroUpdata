@@ -1,0 +1,21 @@
+"use client";
+
+import React from 'react';
+import css from '../styles/Hero.module.css';  // Import the CSS module for styling
+
+const Hero = () => {
+    return (
+        <div className={css.hero}>
+            <div className={css.heroContent}>
+                <h1 className={css.heading}>Transform Your Career with OGI Online Courses</h1>
+                <p className={css.subheading}>BCA, MCA, MBA - Learn and Grow Your Future Today</p>
+                <div className={css.buttons}>
+                    <button className={css.learnButton}>Learn More</button>
+                    <button className={css.admissionButton}>Admission Now</button>
+                </div>
+            </div>
+        </div>
+    );
+};  
+
+export default Hero;
