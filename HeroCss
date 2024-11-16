@@ -1,0 +1,146 @@
+/* General styling for the hero section */
+.hero {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    background-image: url('https://images.unsplash.com/20/cambridge.JPG?q=80&w=1447&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Replace with your IT sector related image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.hero::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.518);
+}
+
+/* Semi-transparent overlay that covers the image */
+.heroContent {
+    z-index: 4;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    width: 80%; /* Allows some space on sides */
+    max-width: 800px; /* Maximum width for the content */
+    text-align: center;
+}
+
+/* Heading styling */
+.heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Gives a bold, modern feel */
+    letter-spacing: 2px; /* Adds space between letters for a clean look */
+    line-height: 1.3;
+}
+
+/* Subheading styling */
+.subheading {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300; /* Lighter weight for the subheading */
+    letter-spacing: 1px;
+}
+
+/* Buttons container */
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Styling for buttons */
+.learnButton,
+.admissionButton {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    min-width: 160px; /* Ensure buttons have a consistent size */
+}
+
+/* Learn More button */
+.learnButton {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.learnButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-5px); /* Slightly lifts the button on hover */
+}
+
+/* Admission Now button */
+.admissionButton {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+}
+
+.admissionButton:hover {
+    background-color: #218838;
+    transform: translateY(-5px); /* Slightly lifts the button on hover */
+}
+
+/* Responsive Media Queries */
+
+/* For tablets and below */
+@media (max-width: 768px) {
+    .hero {
+        background-position: top center;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+
+    .subheading {
+        font-size: 1.3rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .learnButton,
+    .admissionButton {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .hero {
+        background-position: top center;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .subheading {
+        font-size: 1.2rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .learnButton,
+    .admissionButton {
+        width: 90%;
+        margin: 10px 0;
+    }
+}
